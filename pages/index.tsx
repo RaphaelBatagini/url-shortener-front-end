@@ -1,14 +1,32 @@
 import FormInput from "../components/forms/FormInput";
 import Button from "../components/buttons/Button";
-import Form from "../components/forms/Form";
+import Form, { FormSubmitType } from "../components/forms/Form";
 import Heading from "../components/Heading";
 import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Paragraph from "../components/Paragraph";
 import Head from "../components/Head";
 import Card from "../components/cards/Card";
+import { useState } from "react";
+import Anchor from "../components/anchors/Anchor";
+import ClipboardAnchor from "../components/anchors/ClipboardAnchor";
 
 export default function Home() {
+  const [shortenedUrl, setShortenedUrl] = useState<string>("");
+
+  const shortUrl = async ({ formData }: FormSubmitType): Promise<void> => {
+    const result = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/shorten-url/${encodeURIComponent(
+        formData.originalUrl
+      )}`
+    );
+    const data = await result.json();
+
+    if (data?.result) {
+      setShortenedUrl(data.result);
+    }
+  }
+
   return (
     <div>
       <Head />
@@ -17,7 +35,10 @@ export default function Home() {
         <Container className="flex flex-col justify-center items-center py-20">
           <Heading level={1}>Start shortening your URLs!</Heading>
 
-          <Form className="mt-12 w-full md:w-5/6 lg:w-2/5 flex">
+          <Form
+            className="mt-12 w-full md:w-5/6 lg:w-2/5 flex"
+            onSubmit={shortUrl}
+          >
             <FormInput
               name="originalUrl"
               id="url"
@@ -29,6 +50,20 @@ export default function Home() {
               Shorten it!
             </Button>
           </Form>
+
+          {shortenedUrl && (
+            <div className="mt-16">
+              <strong>Your Shortened URL: </strong>
+              <Anchor
+                href={shortenedUrl}
+                target="_blank"
+              >
+                {shortenedUrl}
+              </Anchor>
+              &nbsp;
+              <ClipboardAnchor value={ shortenedUrl }>Copy</ClipboardAnchor>
+            </div>
+          )}
 
           <Paragraph align="center" spacing="md">
             URL Shortener is a free tool to shorten your URLs or reduce your
