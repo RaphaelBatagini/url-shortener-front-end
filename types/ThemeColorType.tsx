@@ -1,0 +1,1 @@
+export type ThemeColorType = 'light' | 'white' | 'dark' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger';
