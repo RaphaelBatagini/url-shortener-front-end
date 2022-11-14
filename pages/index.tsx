@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FormInput from "../components/forms/FormInput";
 import Button from "../components/buttons/Button";
 import Form, { FormSubmitType } from "../components/forms/Form";
@@ -7,7 +8,6 @@ import Footer from "../components/Footer";
 import Paragraph from "../components/Paragraph";
 import Head from "../components/Head";
 import Card from "../components/cards/Card";
-import { useState } from "react";
 import Anchor from "../components/anchors/Anchor";
 import ClipboardAnchor from "../components/anchors/ClipboardAnchor";
 
@@ -60,8 +60,7 @@ export default function Home() {
               >
                 {shortenedUrl}
               </Anchor>
-              &nbsp;
-              <ClipboardAnchor value={ shortenedUrl }>Copy</ClipboardAnchor>
+              <ClipboardAnchor value={ shortenedUrl } className="ml-3"/>
             </div>
           )}
 

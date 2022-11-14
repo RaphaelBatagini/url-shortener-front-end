@@ -1,8 +1,9 @@
 import { ReactElement, useState } from "react";
+import Image from 'next/image';
 import Tooltip from "../tooltips/Tooltip";
 import Anchor from "./Anchor";
 
-export default function ClipboardAnchor({ value, children }: ClipboardAnchorType): ReactElement {
+export default function ClipboardAnchor({ value, className }: ClipboardAnchorType): ReactElement {
   const [showCopied, setShowCopied] = useState(false);
 
   const addToClipboard = () => {
@@ -18,7 +19,7 @@ export default function ClipboardAnchor({ value, children }: ClipboardAnchorType
   return (
     <>
       <Anchor onClick={ addToClipboard } className="relative">
-        { children }
+        <Image src="/images/copy-icon.svg" className={`inline-block ${className}`} width={18} height={18} alt="Copy Icon"/>
         { showCopied && (
           <Tooltip show={ showCopied }>Copied</Tooltip>
         ) }
@@ -29,5 +30,5 @@ export default function ClipboardAnchor({ value, children }: ClipboardAnchorType
 
 export type ClipboardAnchorType = {
   value?: string;
-  children?: any;
+  className?: string;
 }
