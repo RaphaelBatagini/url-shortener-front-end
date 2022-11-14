@@ -23,7 +23,7 @@ export default function Home() {
     const data = await result.json();
 
     if (data?.result) {
-      setShortenedUrl(data.result);
+      setShortenedUrl(`${process.env.NEXT_PUBLIC_APP_URL}/${data.result}`);
     }
   }
 

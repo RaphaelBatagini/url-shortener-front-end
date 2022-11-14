@@ -1,5 +1,7 @@
-export default function Heading({ level, children }: HeadingType) {
-  const classes = '';
+import { AlignType } from "../types/AlignType";
+
+export default function Heading({ level, align = 'left', children }: HeadingType) {
+  const classes = `text-${align}`;
   return (
     <>
       { level === 1 && (<h1 className={`text-6xl ${classes}`}>{ children }</h1>) }
@@ -14,5 +16,6 @@ export default function Heading({ level, children }: HeadingType) {
 
 export type HeadingType = {
   level: number;
+  align?: AlignType;
   children?: any;
 }
