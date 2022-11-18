@@ -1,6 +1,13 @@
 # URL Shortener - Front-end
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Front-end for an URL Shortener application.
+
+The API can be found [here](https://github.com/RaphaelBatagini/url-shortener-api).
+
+## Tech Stack
+- ReactJS 18;
+- NextJS 13;
+- TypeScript 4.
 
 ## Getting Started
 
