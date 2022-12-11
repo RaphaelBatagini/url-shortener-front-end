@@ -33,6 +33,7 @@ export default function Home() {
 
       <main>
         <Container className="flex flex-col justify-center items-center py-20">
+
           <Heading level={1}>Start shortening your URLs!</Heading>
 
           <Form
