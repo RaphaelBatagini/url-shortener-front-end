@@ -32,12 +32,12 @@ export default function Home() {
       <Head />
 
       <main>
-        <Container className="flex flex-col justify-center items-center py-20">
+        <Container className="flex flex-col justify-center items-center py-5 lg:py-10">
 
           <Heading level={1}>Start shortening your URLs!</Heading>
 
           <Form
-            className="mt-12 w-full md:w-5/6 lg:w-2/5 flex"
+            className="mt-12 w-full md:w-5/6 lg:w-2/5 lg:flex"
             onSubmit={shortUrl}
           >
             <FormInput
@@ -45,9 +45,9 @@ export default function Home() {
               id="url"
               placeholder="Type your URL"
               required
-              className="grow w-1"
+              className="grow w-full lg:w-1"
             />
-            <Button type="submit" className="shrink-0">
+            <Button type="submit" className="w-full mt-4 lg:mt-0 lg:w-auto shrink-0">
               Shorten it!
             </Button>
           </Form>
@@ -65,58 +65,36 @@ export default function Home() {
             </div>
           )}
 
-          <Paragraph align="center" spacing="md">
-            URL Shortener is a free tool to shorten your URLs or reduce your
-            links.
-            <br />
-            Use URL Shortener to create a shortened link making it easy to
-            remember.
+          <Paragraph align="center" spacing="sm">
+            <strong>Shortened.at</strong> is a free web tool to shorten your links and create friendlier URLs.
           </Paragraph>
 
-          <Heading level={3}>Simple and fast URL shortener!</Heading>
+          <Heading level={2}>Fast and simple as it should be!</Heading>
           <Paragraph align="center">
-            ShortURL allows to reduce long links from Instagram, Facebook,
-            YouTube, Twitter, Linked In and top sites on the Internet, just
-            paste the long URL and click the Shorten URL button. On the next
-            screen, copy the shortened URL and share it on websites, chat and
-            e-mail. After shortening the URL, check how many clicks it received.
+            Reduce long links from any social network like Instagram, Facebook,
+            Twitter, Linked In and any other website from the internet.
+            Paste or type the original URL, click the button and you're done.
+            As fast as you can imagine, the shortened URL will be shown and you just
+            have to click on copy button.
           </Paragraph>
 
-          <Heading level={3}>Shorten, share and track</Heading>
+          <Heading level={2}>Why should I use Shortened.at?</Heading>
           <Paragraph align="center">
-            Your shortened URLs can be used in publications, documents,
-            advertisements, blogs, forums, instant messages, and other
-            locations. Track statistics for your business and projects by
-            monitoring the number of hits from your URL with the click counter,
-            you do not have to register.
+            Why should you use <strong>Shortened.at</strong> to shorten your URLs with so many options on the internet? We explain!
           </Paragraph>
 
-          <div className="grid grid-cols-2 gap-4 w-full lg:w-3/6">
+          <div className="grid lg:grid-cols-2 gap-4 w-full lg:w-3/6">
             <Card link="#">
-              <Heading level={4}>Free &rarr;</Heading>
-              <Paragraph>
-                Instantly deploy your Next.js site to a public URL with Vercel.
+              <Heading level={4}>Simple</Heading>
+              <Paragraph align="center">
+                We do not offer a lot of features you will never use, just simple shortened URLs generated fast as it should be.
               </Paragraph>
             </Card>
 
             <Card link="#">
-              <Heading level={4}>Free &rarr;</Heading>
-              <Paragraph>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </Paragraph>
-            </Card>
-
-            <Card link="#">
-              <Heading level={4}>Free &rarr;</Heading>
-              <Paragraph>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </Paragraph>
-            </Card>
-
-            <Card link="#">
-              <Heading level={4}>Free &rarr;</Heading>
-              <Paragraph>
-                Instantly deploy your Next.js site to a public URL with Vercel.
+              <Heading level={4}>Free</Heading>
+              <Paragraph align="center">
+                No plans and no costs. Shorten your URLs for free now.
               </Paragraph>
             </Card>
           </div>
