@@ -53,7 +53,7 @@ export default function Home() {
           </Form>
 
           {shortenedUrl && (
-            <div className="mt-16">
+            <div className="text-center mt-8">
               <strong>Your Shortened URL: </strong>
               <Anchor
                 href={shortenedUrl}
@@ -61,7 +61,7 @@ export default function Home() {
               >
                 {shortenedUrl}
               </Anchor>
-              <ClipboardAnchor value={ shortenedUrl } className="ml-3"/>
+              <ClipboardAnchor value={ shortenedUrl } className="ml-3 -mt-1"/>
             </div>
           )}
 

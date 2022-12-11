@@ -51,10 +51,10 @@ export default function Redirect() {
       <Head />
 
       <main>
-        <Container className="flex flex-col py-20">
+        <Container className="flex flex-col py-5 lg:py-10">
           {originalUrl === null && <Paragraph align="center">Searching your URL...</Paragraph>}
           {originalUrl === false && (
-            <div className="mt-16 text-center">
+            <div className="my-8 text-center">
               <Heading level={1} align="center">URL Not Found</Heading>
               <Paragraph align="center">
                 This shortened URL was not found on our server
