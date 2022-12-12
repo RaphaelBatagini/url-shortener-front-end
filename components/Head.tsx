@@ -3,9 +3,9 @@ import NextHead from "next/head";
 export default function Head() {
   return (
     <NextHead>
-      <title>Shortened.at</title>
+      <title>Best Tools For Web - URL Shortener</title>
       <meta name="description" content="Shoten your URLs" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.svg" />
     </NextHead>
   );
 }

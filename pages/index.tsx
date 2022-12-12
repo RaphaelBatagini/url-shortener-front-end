@@ -10,6 +10,7 @@ import Head from "../components/Head";
 import Card from "../components/cards/Card";
 import Anchor from "../components/anchors/Anchor";
 import ClipboardAnchor from "../components/anchors/ClipboardAnchor";
+import Image from 'next/image';
 
 export default function Home() {
   const [shortenedUrl, setShortenedUrl] = useState<string>("");
@@ -32,12 +33,21 @@ export default function Home() {
       <Head />
 
       <main>
-        <Container className="flex flex-col justify-center items-center py-5 lg:py-10">
+        <Container className="flex flex-col justify-center items-center py-5">
+
+          <Image
+            src="/images/logo.svg"
+            alt="Best Tools For Web Logo"
+            width={400}
+            height={0}
+            loading="eager"
+            className="my-8"
+          />
 
           <Heading level={1}>Start shortening your URLs!</Heading>
 
           <Form
-            className="mt-12 w-full md:w-5/6 lg:w-2/5 lg:flex"
+            className="mt-12 w-full md:w-5/6 xl:w-2/5 lg:flex"
             onSubmit={shortUrl}
           >
             <FormInput
@@ -66,14 +76,15 @@ export default function Home() {
           )}
 
           <Paragraph align="center" spacing="sm">
-            <strong>Shortened.at</strong> is a free web tool to shorten your links and create friendlier URLs.
+            <strong><Anchor href="https://besttoolsforweb.com" target="_blank">Best Tools For Web</Anchor> - URL Shortener</strong>
+            is a free web tool to shorten your links and create friendlier URLs.
           </Paragraph>
 
           <Heading level={2}>Fast and simple as it should be!</Heading>
           <Paragraph align="center">
             Reduce long links from any social network like Instagram, Facebook,
             Twitter, Linked In and any other website from the internet.
-            Paste or type the original URL, click the button and you're done.
+            Paste or type the original URL, click the button and you&apos;re done.
             As fast as you can imagine, the shortened URL will be shown and you just
             have to click on copy button.
           </Paragraph>
@@ -83,18 +94,19 @@ export default function Home() {
             Why should you use <strong>Shortened.at</strong> to shorten your URLs with so many options on the internet? We explain!
           </Paragraph>
 
-          <div className="grid lg:grid-cols-2 gap-4 w-full lg:w-3/6">
+          <div className="grid lg:grid-cols-2 gap-4 w-full xl:w-3/6">
             <Card link="#">
-              <Heading level={4}>Simple</Heading>
+              <Heading level={3}>Simple</Heading>
               <Paragraph align="center">
-                We do not offer a lot of features you will never use, just simple shortened URLs generated fast as it should be.
+                We do not offer a lot of features you will never use,
+                just simple shortened URLs generated as fast as it should be.
               </Paragraph>
             </Card>
 
             <Card link="#">
-              <Heading level={4}>Free</Heading>
+              <Heading level={3}>Free</Heading>
               <Paragraph align="center">
-                No plans and no costs. Shorten your URLs for free now.
+                No plans and no costs. Shorten your URLs for free now!
               </Paragraph>
             </Card>
           </div>

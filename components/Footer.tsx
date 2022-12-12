@@ -4,13 +4,14 @@ export default function Footer() {
   return (
     <footer className="flex grow p-5 border-t border-black justify-center items-center">
       <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        href="https://besttoolsforweb.com"
         target="_blank"
         rel="noopener noreferrer"
+        className="text-center"
       >
-        Powered by{" "}
+        Made with <span style={{ color: 'red' }}>❤</span> by
         <span className="flex grow justify-center items-center">
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <Image src="/images/logo.svg" alt="Best Tools For Web Logo" width={150} height={150} className="mt-3" />
         </span>
       </a>
     </footer>
