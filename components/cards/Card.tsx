@@ -2,10 +2,8 @@ import { AlignType } from "../../types/AlignType";
 import { ThemeColorType } from "../../types/ThemeColorType";
 
 export default function Card({
-  link,
   align = "left",
   color = "dark",
-  hoverColor = "primary",
   className,
   children,
 }: CardType) {
@@ -17,22 +15,14 @@ export default function Card({
     return `text-${color}`;
   };
 
-  const getHoverColor = () => {
-    return `hover:text-${hoverColor} hover:border-${hoverColor}`;
-  };
-
   return (
-    <a
-      href={link}
-      className={`p-6 border border-light rounded ${getAlign()} ${getColor()} ${getHoverColor()} ${className}`}
-    >
+    <div className={`p-6 border border-light rounded ${getAlign()} ${getColor()} ${className}`}>
       {children}
-    </a>
+    </div>
   );
 }
 
 export type CardType = {
-  link?: string;
   align?: AlignType;
   color?: ThemeColorType;
   hoverColor?: ThemeColorType;

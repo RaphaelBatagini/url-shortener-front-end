@@ -12,6 +12,9 @@ export default async (req, res) => {
       {
         slug: '',
       },
+      {
+        slug: '/short',
+      },
     ];
 
     // Create each URL row
