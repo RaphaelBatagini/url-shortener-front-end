@@ -29,6 +29,9 @@ module.exports = {
       pattern: /my-(8|16|24)/,
     },
     {
+      pattern: /pb-(8|16|24)/,
+    },
+    {
       pattern: /text-(left|center|right)/,
     },
   ]
