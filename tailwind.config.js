@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,13 +18,14 @@ module.exports = {
       'success': '#18b16a',
       'warning': '#e5cf16',
       'danger': '#f52409',
+      ...colors,
     },
     extend: {},
   },
   plugins: [],
   safelist: [
     {
-      pattern: /(bg|text|border)-(light|white|dark|primary|secondary|info|success|warning|danger)/,
+      pattern: /(bg|text|border)-(light|white|dark|primary|secondary|info|success|warning|danger|red)/,
       variants: ['hover']
     },
     {

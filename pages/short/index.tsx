@@ -4,41 +4,36 @@ import Button from "../../components/buttons/Button";
 import Form, { FormSubmitType } from "../../components/forms/Form";
 import Heading from "../../components/Heading";
 import Container from "../../components/Container";
-import Footer from "../../components/Footer";
 import Paragraph from "../../components/Paragraph";
-import Head from "../../components/Head";
 import Card from "../../components/cards/Card";
 import Anchor from "../../components/anchors/Anchor";
 import ClipboardAnchor from "../../components/anchors/ClipboardAnchor";
-import Image from 'next/image';
+import { Logo } from "../../components/Logo";
 
 export default function Home() {
   const [shortenedUrl, setShortenedUrl] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const shortUrl = async ({ formData }: FormSubmitType): Promise<void> => {
-    const result = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/shorten-url/${encodeURIComponent(
-        formData.originalUrl
-      )}`
-    );
-    const data = await result.json();
-
-    if (data?.result) {
-      setShortenedUrl(`${process.env.NEXT_PUBLIC_APP_URL}/${data.result}`);
+    try {
+      const result = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/shorten-url/${encodeURIComponent(
+          formData.originalUrl
+        )}`
+      );
+      const data = await result.json();
+  
+      if (data?.result) {
+        setShortenedUrl(`${process.env.NEXT_PUBLIC_APP_URL}/short/${data.result}`);
+      }
+    } catch (error) {
+      setError('Unfortunately we couldn\'t short your URL now. Please, try again later.');
     }
   }
 
   return (
         <Container className="flex flex-col justify-center items-center pt-5 pb-8">
-
-          <Image
-            src="/images/logo.svg"
-            alt="Best Tools For Web Logo"
-            width={400}
-            height={0}
-            loading="eager"
-            className="my-8"
-          />
+          <Logo />
 
           <Heading level={1}>Start shortening your URLs!</Heading>
 
@@ -49,7 +44,7 @@ export default function Home() {
             <FormInput
               name="originalUrl"
               id="url"
-              placeholder="Type your URL"
+              placeholder="Type your URL here"
               required
               className="grow w-full lg:w-1"
             />
@@ -71,6 +66,13 @@ export default function Home() {
             </div>
           )}
 
+          {error && (
+            <div className="text-center mt-8 bg-danger/25 border-2 border-dashed border-danger py-2 px-3">
+              <strong>URL shortening failed: </strong>
+              {error}
+            </div>
+          )}
+
           <Paragraph align="center" spacing="sm">
             <strong><Anchor href="https://besttoolsforweb.com" target="_blank">Best Tools For Web</Anchor> - URL Shortener</strong>
             is a free web tool to shorten your links and create friendlier URLs.
@@ -85,9 +87,9 @@ export default function Home() {
             have to click on copy button.
           </Paragraph>
 
-          <Heading level={2}>Why should I use Shortened.at?</Heading>
+          <Heading level={2}>Why should I use this URL Shortener?</Heading>
           <Paragraph align="center">
-            Why should you use <strong>Shortened.at</strong> to shorten your URLs with so many options on the internet? We explain!
+            Why should you use <strong>Best Tools For Web URL Shortener</strong> to shorten your URLs with so many options on the internet? We explain!
           </Paragraph>
 
           <div className="grid lg:grid-cols-2 gap-4 w-full xl:w-3/6">

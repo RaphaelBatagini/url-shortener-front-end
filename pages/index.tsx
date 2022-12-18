@@ -2,20 +2,13 @@ import Heading from "../components/Heading";
 import Container from "../components/Container";
 import Paragraph from "../components/Paragraph";
 import Anchor from "../components/anchors/Anchor";
-import Image from "next/image";
 import Button from "../components/buttons/Button";
+import { Logo } from "../components/Logo";
 
 export default function Home() {
   return (
     <Container className="flex flex-col justify-center items-center py-5">
-      <Image
-        src="/images/logo.svg"
-        alt="Best Tools For Web Logo"
-        width={400}
-        height={0}
-        loading="eager"
-        className="my-8"
-      />
+      <Logo />
 
       <Heading level={1}>Best Tools For Web</Heading>
 
