@@ -17,6 +17,7 @@ export default function Home() {
   const shortUrl = async ({ formData }: FormSubmitType): Promise<void> => {
     try {
       setError('');
+      setShortenedUrl('');
       const result = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/shorten-url/${encodeURIComponent(
           formData.originalUrl
