@@ -1,14 +1,14 @@
 import NextHead from "next/head";
 
 export default function Head() {
-  const appName = 'URL Shortener';
-  const description = 'Web Tool to Shorten URLs';
+  const appName = 'Best Tools For Web';
+  const description = 'Web tools to solve web common problems';
   const themeColor = '#3f2ae5';
   const domain = process.env.NEXT_PUBLIC_APP_URL;
 
   return (
     <NextHead>
-      <title>Best Tools For Web - URL Shortener</title>
+      <title>Best Tools For Web</title>
       <meta name="description" content={ description } />
       <meta name="application-name" content={ appName } />
       <meta name="keywords" content={ appName } />
