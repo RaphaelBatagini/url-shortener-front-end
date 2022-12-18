@@ -13,7 +13,7 @@ export default function Home() {
       <Heading level={1}>Best Tools For Web</Heading>
 
       <Paragraph align="center" spacing="sm">
-        Making your life easier with solutions for web common problems!
+        Best Tools For Web tries to make your life easier with solutions for web common problems!
       </Paragraph>
 
       <Heading level={2}>Our Produducts</Heading>
