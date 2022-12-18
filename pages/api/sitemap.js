@@ -20,7 +20,7 @@ export default async (req, res) => {
     // Create each URL row
     pages.forEach(page => {
       smStream.write({
-        url: `/${page.slug}`,
+        url: `${process.env.NEXT_PUBLIC_APP_URL}${page.slug}`,
         changefreq: 'daily',
         priority: 0.9
       });
